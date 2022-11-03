@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomocnik medyczny</title>
+</head>
+<!--https://egzamin-ee09.blogspot.com/2020/03/arkusz-ee09-04-1906.html-->
+<body>
+    <h3>Proste działania</h3>
+    Liczba A: <input type="text" id="liczbaa"><br>
+    Liczba B: <input type="text" id="liczbab"><br>
+    <input type="button" value="+" onClick="dodaj()">
+    <input type="button" value="-" onClick="odejmij()">
+    <input type="button" value="*" onClick="pomnoz()">
+    <input type="button" value="/" onClick="podziel()">
+    <input type="button" value="A^B" onClick="poteguj()">
+    <p id="wynik"></p>
+
+    <script>
+        function dodaj(){
+            let a = parseInt(document.getElementById("liczbaa").value);
+            let b = parseInt(document.getElementById("liczbab").value);
+            let wynik = a+b;
+            document.getElementById("wynik").innerHTML = "Wynik: "+wynik;
+        }
+        function odejmij(){
+            let a = parseInt(document.getElementById("liczbaa").value);
+            let b = parseInt(document.getElementById("liczbab").value);
+            let wynik = a-b;
+            document.getElementById("wynik").innerHTML = "Wynik: "+wynik;
+        }
+        function pomnoz(){
+            let a = parseInt(document.getElementById("liczbaa").value);
+            let b = parseInt(document.getElementById("liczbab").value);
+            let wynik = a*b;
+            document.getElementById("wynik").innerHTML = "Wynik: "+wynik;
+        }
+        function podziel(){
+            let a = parseInt(document.getElementById("liczbaa").value);
+            let b = parseInt(document.getElementById("liczbab").value);
+            if(b != 0){
+                let wynik = a/b;
+                document.getElementById("wynik").innerHTML = "Wynik: "+wynik;
+            }
+            else{
+                document.getElementById("wynik").innerHTML = "Pamiętaj cholero nie dziel przez zero";
+            }
+        }
+        function poteguj(){
+            let a = parseInt(document.getElementById("liczbaa").value);
+            let b = parseInt(document.getElementById("liczbab").value);
+            let wynik = Math.pow(a,b);
+            document.getElementById("wynik").innerHTML = "Wynik: "+wynik;
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacja paliw</title>
+</head>
+<!-- https://egzamin-ee09.blogspot.com/2019/10/blog-post.html -->
+<body>
+
+        <h3>Oblicz koszt paliwa</h3>
+        Rodzaj paliwa (1-benzyna, 2-olej napędowy):<br>
+        <input type="number" id="rodzaj"><br>
+        Ile litrów:<br>
+        <input type="number" id="litry"><br>
+        <input type="submit" value="Oblicz" onClick="oblicz()">
+        <p id="komunikat"></p>
+
+        <script>
+            function oblicz(){
+            let rodzaj = document.getElementById("rodzaj").value;
+            let litry = document.getElementById("litry").value;
+            console.log(rodzaj);
+            console.log(litry);
+            let koszt = 0;
+            if(rodzaj == 1){
+                koszt = litry*4;
+            }
+            else if(rodzaj==2){
+                koszt = litry*3.5;
+            }
+            console.log(koszt);
+            document.getElementById("komunikat").innerHTML = "Koszt paliwa"+koszt+"zł";
+            }
+        </script>
+
+</body>
+</html>
