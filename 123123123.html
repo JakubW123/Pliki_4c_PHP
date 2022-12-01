@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>sprawdz cene swojej wizyty</h2>
+        <input type="checkbox" name="zabieg" id="" value="45">Piling <br>
+        <input type="checkbox" name="zabieg" id="" value="30">Maska <br>
+        <input type="checkbox" name="zabieg" id="" value="20">Masaż twarzy <br>
+        <input type="checkbox" name="zabieg" id="" value="5">Regulacja brwi <br>
+        <input type="button" value="sprawdz cene" onclick="oblicz()">
+        <p id="komunikat"></p>
+        <script>
+            function oblicz(){
+                let suma = 0;
+                let ceny = document.getElementsByName("zabieg");
+                for(let i=0; i<ceny.length; i++){
+                    if(ceny[i].checked){
+                        suma = suma+parseInt(ceny[i].value);
+                    }
+                }
+                document.getElementById("komunikat").innerHTML = "Cena twojej wizyty " + suma + " zł";
+            }
+        </script>
+        
+        <h2>generowanie ciagu arytmetycznego</h2>
+        <p id="wynik"></p>
+        Pierwszy wyraz A1 <br>
+        <input type="number" name="" id="a1"> <br>
+        Różnica ciągu R: <br>
+        <input type="number" name="" id="r"> <br>
+        Liczba wyrazów w ciągu N: <br>
+         <input type="number" name="" id="n"> <br>
+         <input type="button" value="Generuj ciąg" onclick="obliczCiag()">
+         <script>
+            function obliczCiag() {
+                let a1 = parseInt(document.getElementById("a1").value);
+                console.log(a1);
+                let r = parseInt(document.getElementById("r").value);
+                console.log(r);
+                let n = parseInt(document.getElementById("n").value);
+                console.log(n);
+                for(let i=0; i<n; i++){
+                    document.getElementById("wynik").innerHTML += a1 + ", ";
+                    a1= a1+r;
+                }
+            }
+         </script>
+</body>
+</html>
